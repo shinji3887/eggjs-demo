@@ -5,7 +5,7 @@ const Controller = require('egg').Controller;
 class BankController extends Controller {
   async index() {
     const { ctx } = this;
-    ctx.body = 'hi, eggbank111';
+    ctx.body = 'hi, eggbank11122';
   }
 }
 
