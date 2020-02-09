@@ -16,11 +16,23 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1581178232166_9983';
 
   // add your middleware config here
-  config.middleware = [];
+  config.middleware = ['auth'];
+
+  config.mongoose = {
+    client: {
+      url: 'mongodb://127.0.0.1/eggcms', 
+      options: {}
+    },
+  };
+  
 
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
+    auth: {
+      threshold: 1033, // 小于 1k 的响应体不压缩
+      enable: true
+    }
   };
 
   return {
@@ -28,3 +40,5 @@ module.exports = appInfo => {
     ...userConfig,
   };
 };
+
+
